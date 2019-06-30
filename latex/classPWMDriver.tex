@@ -1,0 +1,142 @@
+\hypertarget{classPWMDriver}{}\section{P\+W\+M\+Driver Class Reference}
+\label{classPWMDriver}\index{P\+W\+M\+Driver@{P\+W\+M\+Driver}}
+
+
+P\+WM driver class.  
+
+
+
+
+{\ttfamily \#include $<$Servo\+Controller\+Driver.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPWMDriver_a103dca66c9409beb103ffc6a2bc69a74}\label{classPWMDriver_a103dca66c9409beb103ffc6a2bc69a74}} 
+{\bfseries P\+W\+M\+Driver} (hwlib\+::i2c\+\_\+bus \&bus, uint8\+\_\+t address=0x40)
+\item 
+void \hyperlink{classPWMDriver_ad04b5d0815c1d37934ea7f94a04cfe37}{begin} (void)
+\begin{DoxyCompactList}\small\item\em Function to start the P\+C\+A9685 chip. \end{DoxyCompactList}\item 
+void \hyperlink{classPWMDriver_a3df1a36b697cb9297676a30d1ebeecd3}{reset} (void)
+\begin{DoxyCompactList}\small\item\em Function to reset the mode of the P\+C\+A9685 chip. \end{DoxyCompactList}\item 
+void \hyperlink{classPWMDriver_ae594f58413fa3e879f3038b8aa5c6027}{min\+Max\+Servo} (uint16\+\_\+t \hyperlink{classPWMDriver_aae39ea3ebac1a2b9724b7319b203230e}{min}, uint16\+\_\+t max)
+\begin{DoxyCompactList}\small\item\em Sets minimum and maximum values for degree mapping. \end{DoxyCompactList}\item 
+uint16\+\_\+t \hyperlink{classPWMDriver_aae39ea3ebac1a2b9724b7319b203230e}{min} (uint16\+\_\+t a, uint16\+\_\+t b)
+\begin{DoxyCompactList}\small\item\em Help-\/\+Function that returns the lowest value. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{classPWMDriver_a16751ee4ff51c2deda6f9c4efbc8c869}{floor} (float val)
+\begin{DoxyCompactList}\small\item\em Help-\/\+Function that floors a float value. \end{DoxyCompactList}\item 
+long \hyperlink{classPWMDriver_a9f1afb5b4d6bf18bb2c4b591f310a149}{map} (long x, long in\+\_\+min, long in\+\_\+max, long out\+\_\+min, long out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Help-\/\+Function to map one long between 2 values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPWMDriver_aaeded52492e2cf39770492d71fd3b161}\label{classPWMDriver_aaeded52492e2cf39770492d71fd3b161}} 
+uint16\+\_\+t \hyperlink{classPWMDriver_aaeded52492e2cf39770492d71fd3b161}{deg\+To\+Pwm} (float deg)
+\begin{DoxyCompactList}\small\item\em function that maps degrees to pulse width \end{DoxyCompactList}\item 
+void \hyperlink{classPWMDriver_ae52eb9cef15ce7bec9acef557e08f47e}{set\+P\+W\+M\+Freq} (float freq)
+\begin{DoxyCompactList}\small\item\em Function to set the frequency (Hz) of the P\+C\+A9685 chip. \end{DoxyCompactList}\item 
+void \hyperlink{classPWMDriver_a5c94a2f5ea34ba2cd3af6b589b82590c}{set\+P\+WM} (uint8\+\_\+t num, uint16\+\_\+t on, uint16\+\_\+t off)
+\begin{DoxyCompactList}\small\item\em function to set P\+WM for given pin num \end{DoxyCompactList}\item 
+void \hyperlink{classPWMDriver_a2046fc4de1b6000aa02d3fb4eae8a3e9}{set\+Pin} (uint8\+\_\+t num, uint16\+\_\+t val, bool invert=false)
+\begin{DoxyCompactList}\small\item\em funtion that sets the pwm for a single pin \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\+WM driver class. 
+
+This class has all the needed functions to set the P\+WM pulse signals on the P\+C\+A9685 chip. It also includes some functions to help with calculations such as degree mapping to pulse widths. To create the class you need to give it an i2c\+\_\+bus na dits address (default is 0x40) 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPWMDriver_ad04b5d0815c1d37934ea7f94a04cfe37}\label{classPWMDriver_ad04b5d0815c1d37934ea7f94a04cfe37}} 
+\index{P\+W\+M\+Driver@{P\+W\+M\+Driver}!begin@{begin}}
+\index{begin@{begin}!P\+W\+M\+Driver@{P\+W\+M\+Driver}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily void P\+W\+M\+Driver\+::begin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to start the P\+C\+A9685 chip. 
+
+Resets all the setting son the chip and sets a frequency usable for servos \mbox{\Hypertarget{classPWMDriver_a16751ee4ff51c2deda6f9c4efbc8c869}\label{classPWMDriver_a16751ee4ff51c2deda6f9c4efbc8c869}} 
+\index{P\+W\+M\+Driver@{P\+W\+M\+Driver}!floor@{floor}}
+\index{floor@{floor}!P\+W\+M\+Driver@{P\+W\+M\+Driver}}
+\subsubsection{\texorpdfstring{floor()}{floor()}}
+{\footnotesize\ttfamily uint8\+\_\+t P\+W\+M\+Driver\+::floor (\begin{DoxyParamCaption}\item[{float}]{val }\end{DoxyParamCaption})}
+
+
+
+Help-\/\+Function that floors a float value. 
+
+casts a float to an interger to round it and then returns it if it is lower than the original float else -\/1 \mbox{\Hypertarget{classPWMDriver_a9f1afb5b4d6bf18bb2c4b591f310a149}\label{classPWMDriver_a9f1afb5b4d6bf18bb2c4b591f310a149}} 
+\index{P\+W\+M\+Driver@{P\+W\+M\+Driver}!map@{map}}
+\index{map@{map}!P\+W\+M\+Driver@{P\+W\+M\+Driver}}
+\subsubsection{\texorpdfstring{map()}{map()}}
+{\footnotesize\ttfamily long P\+W\+M\+Driver\+::map (\begin{DoxyParamCaption}\item[{long}]{x,  }\item[{long}]{in\+\_\+min,  }\item[{long}]{in\+\_\+max,  }\item[{long}]{out\+\_\+min,  }\item[{long}]{out\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+Help-\/\+Function to map one long between 2 values. 
+
+Re-\/maps a number from one range to another \mbox{\Hypertarget{classPWMDriver_aae39ea3ebac1a2b9724b7319b203230e}\label{classPWMDriver_aae39ea3ebac1a2b9724b7319b203230e}} 
+\index{P\+W\+M\+Driver@{P\+W\+M\+Driver}!min@{min}}
+\index{min@{min}!P\+W\+M\+Driver@{P\+W\+M\+Driver}}
+\subsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily uint16\+\_\+t P\+W\+M\+Driver\+::min (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{a,  }\item[{uint16\+\_\+t}]{b }\end{DoxyParamCaption})}
+
+
+
+Help-\/\+Function that returns the lowest value. 
+
+Returns lowest value \mbox{\Hypertarget{classPWMDriver_ae594f58413fa3e879f3038b8aa5c6027}\label{classPWMDriver_ae594f58413fa3e879f3038b8aa5c6027}} 
+\index{P\+W\+M\+Driver@{P\+W\+M\+Driver}!min\+Max\+Servo@{min\+Max\+Servo}}
+\index{min\+Max\+Servo@{min\+Max\+Servo}!P\+W\+M\+Driver@{P\+W\+M\+Driver}}
+\subsubsection{\texorpdfstring{min\+Max\+Servo()}{minMaxServo()}}
+{\footnotesize\ttfamily void P\+W\+M\+Driver\+::min\+Max\+Servo (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{min,  }\item[{uint16\+\_\+t}]{max }\end{DoxyParamCaption})}
+
+
+
+Sets minimum and maximum values for degree mapping. 
+
+This functions is for the minimum and maximum pulse widths of your servos of choice Some servos have a lower minimum value or a higher maximum and this way you can edit those so your servos dont break or wear down after a while \mbox{\Hypertarget{classPWMDriver_a3df1a36b697cb9297676a30d1ebeecd3}\label{classPWMDriver_a3df1a36b697cb9297676a30d1ebeecd3}} 
+\index{P\+W\+M\+Driver@{P\+W\+M\+Driver}!reset@{reset}}
+\index{reset@{reset}!P\+W\+M\+Driver@{P\+W\+M\+Driver}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void P\+W\+M\+Driver\+::reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to reset the mode of the P\+C\+A9685 chip. 
+
+Writes the reset signal to the mode register and waits 10 ms for it to be done \mbox{\Hypertarget{classPWMDriver_a2046fc4de1b6000aa02d3fb4eae8a3e9}\label{classPWMDriver_a2046fc4de1b6000aa02d3fb4eae8a3e9}} 
+\index{P\+W\+M\+Driver@{P\+W\+M\+Driver}!set\+Pin@{set\+Pin}}
+\index{set\+Pin@{set\+Pin}!P\+W\+M\+Driver@{P\+W\+M\+Driver}}
+\subsubsection{\texorpdfstring{set\+Pin()}{setPin()}}
+{\footnotesize\ttfamily void P\+W\+M\+Driver\+::set\+Pin (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{num,  }\item[{uint16\+\_\+t}]{val,  }\item[{bool}]{invert = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+funtion that sets the pwm for a single pin 
+
+This function calculates the timings for the set\+P\+WM function and inserts them into it Invert can be used to flip the pulse signal horizontaly so that instead of it starting high it starts low \mbox{\Hypertarget{classPWMDriver_a5c94a2f5ea34ba2cd3af6b589b82590c}\label{classPWMDriver_a5c94a2f5ea34ba2cd3af6b589b82590c}} 
+\index{P\+W\+M\+Driver@{P\+W\+M\+Driver}!set\+P\+WM@{set\+P\+WM}}
+\index{set\+P\+WM@{set\+P\+WM}!P\+W\+M\+Driver@{P\+W\+M\+Driver}}
+\subsubsection{\texorpdfstring{set\+P\+W\+M()}{setPWM()}}
+{\footnotesize\ttfamily void P\+W\+M\+Driver\+::set\+P\+WM (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{num,  }\item[{uint16\+\_\+t}]{on,  }\item[{uint16\+\_\+t}]{off }\end{DoxyParamCaption})}
+
+
+
+function to set P\+WM for given pin num 
+
+This funcion sets the pulse width of the given pin on refers to the timing when to signal is meant to be on and off is when the signal should be turned off \mbox{\Hypertarget{classPWMDriver_ae52eb9cef15ce7bec9acef557e08f47e}\label{classPWMDriver_ae52eb9cef15ce7bec9acef557e08f47e}} 
+\index{P\+W\+M\+Driver@{P\+W\+M\+Driver}!set\+P\+W\+M\+Freq@{set\+P\+W\+M\+Freq}}
+\index{set\+P\+W\+M\+Freq@{set\+P\+W\+M\+Freq}!P\+W\+M\+Driver@{P\+W\+M\+Driver}}
+\subsubsection{\texorpdfstring{set\+P\+W\+M\+Freq()}{setPWMFreq()}}
+{\footnotesize\ttfamily void P\+W\+M\+Driver\+::set\+P\+W\+M\+Freq (\begin{DoxyParamCaption}\item[{float}]{freq }\end{DoxyParamCaption})}
+
+
+
+Function to set the frequency (Hz) of the P\+C\+A9685 chip. 
+
+This functions sets the update frequency of the chip not all pwm driven devices work on the same frequency normal servos work best on 50\+Hz for Leds you want a higher frequency to reduce stutter 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ServoControllerDriver_8h}{Servo\+Controller\+Driver.\+h}\item 
+\hyperlink{ServoControllerDriver_8cpp}{Servo\+Controller\+Driver.\+cpp}\end{DoxyCompactItemize}
