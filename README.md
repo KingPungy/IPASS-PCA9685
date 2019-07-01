@@ -7,4 +7,6 @@ gear servos wich can handle the rotations and weight of the arm.
 Those with metal gear servos are pricier though.
 
 Here is one: https://www.dennisdeal.com/products/4dof-assembling-acrylic-mechine-robot-arm-with-mg90-metal-gear-servo-for-robot-diy
-The chip the library is writen for is the PCA9685 from adafruit. part of my library is based on their code but writen so that it works together with hwlib from the user Wovo ( https://github.com/wovo/hwlib ) 
+The chip the library is writen for is the PCA9685 from adafruit. Part of my library is based on their code but writen so that it works together with hwlib from the github-user Wovo ( https://github.com/wovo/hwlib ) 
+
+Distributed under the Boost Software License, Version 1.0. (See accompanying file LICENSE_1_0.txt in PCA9685 or copy at http://www.boost.org/LICENSE_1_0.txt)
