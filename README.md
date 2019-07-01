@@ -1,4 +1,4 @@
-# IPASS-PCA9685
+# Adafruit PCA9685 Library
 IPASS repository for my library for the PCA9685 pwm driver controller chip
 
 For the application i used a 4dof (4 degrees of freedom) robot arm.
