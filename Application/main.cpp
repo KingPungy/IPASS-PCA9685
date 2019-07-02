@@ -1,3 +1,8 @@
+//          Copyright Scott Timmermans 2019.
+// Distributed under the Boost Software License, Version 1.0.
+//    (See accompanying file LICENSE_1_0.txt or copy at
+//          https://www.boost.org/LICENSE_1_0.txt)
+
 #include "hwlib.hpp"
 #include <cmath>
 #include "../PCA9685/ServoControllerDriver.h"
@@ -55,8 +60,8 @@ int main( void ){
 
 
 
-// this function doesnt work, pow() and sqrt() 
-// cause problems; it does work in the Arduino IDE (the math is right)
+// this function doesnt work, pow() and sqrt() cause problems;
+// it does work in the Arduino IDE (the math is right)
 void setPositions(float x, float y, float z){
 
 	hwlib::cout << "before ltt\n" << hwlib::flush;
