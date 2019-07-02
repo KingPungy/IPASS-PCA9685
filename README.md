@@ -13,4 +13,7 @@ The chip the library is writen for is the PCA9685 from adafruit ( https://www.ad
 Part of my library is based on their code, but writen so that it works together with hwlib from the github-user Wovo 
 ( https://github.com/wovo/hwlib ) 
 
+For the Doxygen documentations, look in the PCA9685/html and click on one of the html files to look at the generated documentation.
+
+
 Distributed under the Boost Software License, Version 1.0. (See accompanying file LICENSE_1_0.txt in PCA9685 or copy at http://www.boost.org/LICENSE_1_0.txt)
