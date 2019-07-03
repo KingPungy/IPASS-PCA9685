@@ -1,36 +1,6 @@
 # Adafruit PCA9685 Library
 IPASS repository for my library for the PCA9685 pwm driver controller chip
 
-link to original repository:
-https://github.com/KingPungy/IPASS-PCA9685
-
-makeup of zip folder
-
-Zipfile
-    |Ipass/
-	| Makefile.link make file so its able to be flashed on the Arduino Due  
-	|
-        |/Application
-        |---_
-        |    |-main.cpp
-        |    |-Makefile
-        |
-        |/PCA9685/
-        |---_
-        |    |-/html = documentation
-        |    |-/latex is part of the documentation
-        |    |-/test contains test code
-        |    |-Doxyfile doxygen config file
-        |    |-ServoControllerDriver.cpp class function file 
-    ____|    |-ServoControllerDriver.h   Library class  file
-    |    
-    | posterwhite.pdf ipass library poster
-    |
-    | PvA   Plan of Action
-
-
-
-
 For the application i used a 4dof (4 degrees of freedom) robot arm.
 There are a lot of them you can buy but i recommend one with metal 
 gear servos wich can handle the rotations and weight of the arm. 
