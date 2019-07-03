@@ -1245,7 +1245,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/libc.a
                 [!provide]                        PROVIDE (__ram_size, __ram_size)
                 [!provide]                        PROVIDE (__ram_end, __ram_end)
 
-.text           0x0000000000000000     0x1b08
+.text           0x0000000000000000     0x1b4c
                 0x0000000000000000                . = ALIGN (0x4)
                 0x0000000000000000                __text_start = .
                 [!provide]                        PROVIDE (__text_start, __text_start)
@@ -1392,134 +1392,134 @@ LOAD /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/libc.a
                 0x0000000000000780       0x44 main.o
                 0x0000000000000780                setCoords(float*, int)
  .text.startup.main
-                0x00000000000007c4       0x8c main.o
+                0x00000000000007c4       0xa0 main.o
                 0x00000000000007c4                main
  .text.__startup
-                0x0000000000000850       0x48 bmptk_cortex.o
-                0x0000000000000850                __startup
- .text          0x0000000000000898      0x370 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_arm_addsubdf3.o)
-                0x0000000000000898                __aeabi_drsub
-                0x00000000000008a0                __aeabi_dsub
-                0x00000000000008a0                __subdf3
-                0x00000000000008a4                __adddf3
-                0x00000000000008a4                __aeabi_dadd
-                0x0000000000000b1c                __aeabi_ui2d
-                0x0000000000000b1c                __floatunsidf
-                0x0000000000000b3c                __floatsidf
-                0x0000000000000b3c                __aeabi_i2d
-                0x0000000000000b60                __extendsfdf2
-                0x0000000000000b60                __aeabi_f2d
-                0x0000000000000b9c                __aeabi_ul2d
-                0x0000000000000b9c                __floatundidf
-                0x0000000000000bac                __floatdidf
-                0x0000000000000bac                __aeabi_l2d
- .text          0x0000000000000c08      0x424 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_arm_muldivdf3.o)
-                0x0000000000000c08                __aeabi_dmul
-                0x0000000000000c08                __muldf3
-                0x0000000000000e5c                __aeabi_ddiv
-                0x0000000000000e5c                __divdf3
- .text          0x000000000000102c       0xa0 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_arm_truncdfsf2.o)
-                0x000000000000102c                __aeabi_d2f
-                0x000000000000102c                __truncdfsf2
- .text          0x00000000000010cc      0x21c /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_arm_addsubsf3.o)
-                0x00000000000010cc                __aeabi_frsub
-                0x00000000000010d4                __subsf3
-                0x00000000000010d4                __aeabi_fsub
-                0x00000000000010d8                __aeabi_fadd
-                0x00000000000010d8                __addsf3
-                0x0000000000001238                __aeabi_ui2f
-                0x0000000000001238                __floatunsisf
-                0x0000000000001240                __aeabi_i2f
-                0x0000000000001240                __floatsisf
-                0x000000000000125c                __floatundisf
-                0x000000000000125c                __aeabi_ul2f
-                0x000000000000126c                __floatdisf
-                0x000000000000126c                __aeabi_l2f
- .text          0x00000000000012e8      0x2a0 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_arm_muldivsf3.o)
-                0x00000000000012e8                __mulsf3
-                0x00000000000012e8                __aeabi_fmul
-                0x0000000000001450                __divsf3
-                0x0000000000001450                __aeabi_fdiv
- .text          0x0000000000001588       0xec /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_arm_cmpsf2.o)
-                0x0000000000001588                __gtsf2
-                0x0000000000001588                __gesf2
-                0x0000000000001590                __lesf2
-                0x0000000000001590                __ltsf2
-                0x0000000000001598                __nesf2
-                0x0000000000001598                __eqsf2
-                0x0000000000001598                __cmpsf2
-                0x00000000000015f8                __aeabi_cfrcmple
-                0x0000000000001600                __aeabi_cfcmple
-                0x0000000000001600                __aeabi_cfcmpeq
-                0x0000000000001610                __aeabi_fcmpeq
-                0x0000000000001624                __aeabi_fcmplt
-                0x0000000000001638                __aeabi_fcmple
-                0x000000000000164c                __aeabi_fcmpge
-                0x0000000000001660                __aeabi_fcmpgt
- .text          0x0000000000001674       0x4c /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_arm_fixsfsi.o)
-                0x0000000000001674                __fixsfsi
-                0x0000000000001674                __aeabi_f2iz
- .text          0x00000000000016c0       0x30 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_aeabi_uldivmod.o)
-                0x00000000000016c0                __aeabi_uldivmod
- .text          0x00000000000016f0      0x2dc /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_udivmoddi4.o)
-                0x00000000000016f0                __udivmoddi4
- .text          0x00000000000019cc        0x4 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_dvmd_tls.o)
-                0x00000000000019cc                __aeabi_ldiv0
-                0x00000000000019d0                . = ALIGN (0x4)
+                0x0000000000000864       0x48 bmptk_cortex.o
+                0x0000000000000864                __startup
+ .text          0x00000000000008ac      0x370 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_arm_addsubdf3.o)
+                0x00000000000008ac                __aeabi_drsub
+                0x00000000000008b4                __aeabi_dsub
+                0x00000000000008b4                __subdf3
+                0x00000000000008b8                __adddf3
+                0x00000000000008b8                __aeabi_dadd
+                0x0000000000000b30                __aeabi_ui2d
+                0x0000000000000b30                __floatunsidf
+                0x0000000000000b50                __floatsidf
+                0x0000000000000b50                __aeabi_i2d
+                0x0000000000000b74                __extendsfdf2
+                0x0000000000000b74                __aeabi_f2d
+                0x0000000000000bb0                __aeabi_ul2d
+                0x0000000000000bb0                __floatundidf
+                0x0000000000000bc0                __floatdidf
+                0x0000000000000bc0                __aeabi_l2d
+ .text          0x0000000000000c1c      0x424 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_arm_muldivdf3.o)
+                0x0000000000000c1c                __aeabi_dmul
+                0x0000000000000c1c                __muldf3
+                0x0000000000000e70                __aeabi_ddiv
+                0x0000000000000e70                __divdf3
+ .text          0x0000000000001040       0xa0 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_arm_truncdfsf2.o)
+                0x0000000000001040                __aeabi_d2f
+                0x0000000000001040                __truncdfsf2
+ .text          0x00000000000010e0      0x21c /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_arm_addsubsf3.o)
+                0x00000000000010e0                __aeabi_frsub
+                0x00000000000010e8                __subsf3
+                0x00000000000010e8                __aeabi_fsub
+                0x00000000000010ec                __aeabi_fadd
+                0x00000000000010ec                __addsf3
+                0x000000000000124c                __aeabi_ui2f
+                0x000000000000124c                __floatunsisf
+                0x0000000000001254                __aeabi_i2f
+                0x0000000000001254                __floatsisf
+                0x0000000000001270                __floatundisf
+                0x0000000000001270                __aeabi_ul2f
+                0x0000000000001280                __floatdisf
+                0x0000000000001280                __aeabi_l2f
+ .text          0x00000000000012fc      0x2a0 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_arm_muldivsf3.o)
+                0x00000000000012fc                __mulsf3
+                0x00000000000012fc                __aeabi_fmul
+                0x0000000000001464                __divsf3
+                0x0000000000001464                __aeabi_fdiv
+ .text          0x000000000000159c       0xec /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_arm_cmpsf2.o)
+                0x000000000000159c                __gtsf2
+                0x000000000000159c                __gesf2
+                0x00000000000015a4                __lesf2
+                0x00000000000015a4                __ltsf2
+                0x00000000000015ac                __nesf2
+                0x00000000000015ac                __eqsf2
+                0x00000000000015ac                __cmpsf2
+                0x000000000000160c                __aeabi_cfrcmple
+                0x0000000000001614                __aeabi_cfcmple
+                0x0000000000001614                __aeabi_cfcmpeq
+                0x0000000000001624                __aeabi_fcmpeq
+                0x0000000000001638                __aeabi_fcmplt
+                0x000000000000164c                __aeabi_fcmple
+                0x0000000000001660                __aeabi_fcmpge
+                0x0000000000001674                __aeabi_fcmpgt
+ .text          0x0000000000001688       0x4c /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_arm_fixsfsi.o)
+                0x0000000000001688                __fixsfsi
+                0x0000000000001688                __aeabi_f2iz
+ .text          0x00000000000016d4       0x30 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_aeabi_uldivmod.o)
+                0x00000000000016d4                __aeabi_uldivmod
+ .text          0x0000000000001704      0x2dc /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_udivmoddi4.o)
+                0x0000000000001704                __udivmoddi4
+ .text          0x00000000000019e0        0x4 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_dvmd_tls.o)
+                0x00000000000019e0                __aeabi_ldiv0
+                0x00000000000019e4                . = ALIGN (0x4)
  *(.glue_7t .glue_7)
- .glue_7        0x00000000000019d0        0x0 linker stubs
- .glue_7t       0x00000000000019d0        0x0 linker stubs
-                0x00000000000019d0                . = ALIGN (0x4)
+ .glue_7        0x00000000000019e4        0x0 linker stubs
+ .glue_7t       0x00000000000019e4        0x0 linker stubs
+                0x00000000000019e4                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata._ZN3due8pin_infoENS_4pinsE.str1.1
-                0x00000000000019d0       0x38 ../PCA9685/ServoControllerDriver.o
+                0x00000000000019e4       0x38 ../PCA9685/ServoControllerDriver.o
  .rodata._ZZN3due8pin_infoENS_4pinsEE14pin_info_array
-                0x0000000000001a08       0xa4 ../PCA9685/ServoControllerDriver.o
+                0x0000000000001a1c       0xa4 ../PCA9685/ServoControllerDriver.o
  .rodata._ZTVN5hwlib26i2c_bus_bit_banged_scl_sdaE
-                0x0000000000001aac       0x34 main.o
-                0x0000000000001aac                vtable for hwlib::i2c_bus_bit_banged_scl_sda
+                0x0000000000001ac0       0x34 main.o
+                0x0000000000001ac0                vtable for hwlib::i2c_bus_bit_banged_scl_sda
  .rodata._ZTVN3due6pin_ocE
-                0x0000000000001ae0       0x18 main.o
-                0x0000000000001ae0                vtable for due::pin_oc
- .rodata        0x0000000000001af8       0x10 main.o
-                0x0000000000001b08                . = ALIGN (0x4)
+                0x0000000000001af4       0x18 main.o
+                0x0000000000001af4                vtable for due::pin_oc
+ .rodata        0x0000000000001b0c       0x40 main.o
+                0x0000000000001b4c                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000000000001b08                . = ALIGN (0x4)
+                0x0000000000001b4c                . = ALIGN (0x4)
  *(.gcc_except_table)
-                0x0000000000001b08                . = ALIGN (0x4)
+                0x0000000000001b4c                . = ALIGN (0x4)
  *(.eh_frame_hdr)
-                0x0000000000001b08                . = ALIGN (0x4)
+                0x0000000000001b4c                . = ALIGN (0x4)
  *(.eh_frame)
-                0x0000000000001b08                . = ALIGN (0x4)
-                0x0000000000001b08                __text_end = .
+                0x0000000000001b4c                . = ALIGN (0x4)
+                0x0000000000001b4c                __text_end = .
                 [!provide]                        PROVIDE (__text_end, __text_end)
 
-.vfp11_veneer   0x0000000000001b08        0x0
- .vfp11_veneer  0x0000000000001b08        0x0 linker stubs
+.vfp11_veneer   0x0000000000001b4c        0x0
+ .vfp11_veneer  0x0000000000001b4c        0x0 linker stubs
 
-.v4_bx          0x0000000000001b08        0x0
- .v4_bx         0x0000000000001b08        0x0 linker stubs
+.v4_bx          0x0000000000001b4c        0x0
+ .v4_bx         0x0000000000001b4c        0x0 linker stubs
 
-.iplt           0x0000000000001b08        0x0
- .iplt          0x0000000000001b08        0x0 ../PCA9685/ServoControllerDriver.o
+.iplt           0x0000000000001b4c        0x0
+ .iplt          0x0000000000001b4c        0x0 ../PCA9685/ServoControllerDriver.o
 
 .IF_YOU_SEE_THIS_YOU_HAVE_ONE_OR_MORE_GLOBAL_OBJECT_CONSTRUCTORS
  *(.init)
  *(.preinit_array)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x0000000000001b08                . = ALIGN (0x4)
-                0x0000000000001b08                __exidx_start = .
+                0x0000000000001b4c                . = ALIGN (0x4)
+                0x0000000000001b4c                __exidx_start = .
                 [!provide]                        PROVIDE (__exidx_start, __exidx_start)
 
-.ARM.exidx      0x0000000000001b08        0x8
+.ARM.exidx      0x0000000000001b4c        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x0000000000001b08        0x8 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x0000000000001b4c        0x8 /usr/lib/gcc/arm-none-eabi/6.3.1/thumb/v7-m/libgcc.a(_udivmoddi4.o)
 
-.rel.dyn        0x0000000000001b10        0x0
- .rel.iplt      0x0000000000001b10        0x0 ../PCA9685/ServoControllerDriver.o
-                0x0000000000001b10                . = ALIGN (0x4)
-                0x0000000000001b10                __exidx_end = .
+.rel.dyn        0x0000000000001b54        0x0
+ .rel.iplt      0x0000000000001b54        0x0 ../PCA9685/ServoControllerDriver.o
+                0x0000000000001b54                . = ALIGN (0x4)
+                0x0000000000001b54                __exidx_end = .
                 [!provide]                        PROVIDE (__exidx_end, __exidx_end)
 
 .bss            0x0000000020000000    0x12020
@@ -1562,9 +1562,9 @@ LOAD /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/libc.a
                 0x0000000020012020                __bss_end = .
                 [!provide]                        PROVIDE (__bss_end, __bss_end)
 
-.data           0x0000000020012020        0x4 load address 0x0000000000001b10
+.data           0x0000000020012020        0x4 load address 0x0000000000001b54
                 0x0000000020012020                . = ALIGN (0x4)
-                0x0000000000001b10                __data_init_start = LOADADDR (.data)
+                0x0000000000001b54                __data_init_start = LOADADDR (.data)
                 [!provide]                        PROVIDE (__data_init_start, __data_init_start)
                 0x0000000020012020                __data_start = .
                 [!provide]                        PROVIDE (__data_start, __data_start)
@@ -1576,13 +1576,13 @@ LOAD /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/libc.a
                 0x0000000020012024                . = ALIGN (0x4)
                 0x0000000020012024                __data_end = .
                 [!provide]                        PROVIDE (__data_end, __data_end)
-                0x0000000000001b10                __data_init_end = LOADADDR (.data)
+                0x0000000000001b54                __data_init_end = LOADADDR (.data)
                 [!provide]                        PROVIDE (__data_init_end, __data_init_end)
                 0x0000000000000004                PROVIDE (__data_size, (__data_end - __data_start))
                 0x0000000000000004                PROVIDE (__data_init_size, __data_size)
                 [!provide]                        PROVIDE (__data_init_end, (__data_init_start + __data_init_size))
 
-.igot.plt       0x0000000020012024        0x0 load address 0x0000000000001b14
+.igot.plt       0x0000000020012024        0x0 load address 0x0000000000001b58
  .igot.plt      0x0000000020012024        0x0 ../PCA9685/ServoControllerDriver.o
                 0x0000000020012024                . = ALIGN (0x4)
                 0x0000000020012024                __heap_start = .

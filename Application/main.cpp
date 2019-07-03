@@ -1,8 +1,3 @@
-//          Copyright Scott Timmermans 2019.
-// Distributed under the Boost Software License, Version 1.0.
-//    (See accompanying file LICENSE_1_0.txt or copy at
-//          https://www.boost.org/LICENSE_1_0.txt)
-
 #include "hwlib.hpp"
 #include <cmath>
 #include "../PCA9685/ServoControllerDriver.h"
@@ -39,29 +34,35 @@ int main( void ){
 	pwm.begin();
 	pwm.minMaxServo(SERVO_0,SERVO_180);
 
-	float coords[] = {180.0, 150.0, 150.0, 0};
-	
+	// more than 4 positions makes  it stop working????
+	float coords[] = {0.0, 170.0, 110.0, 0,    90.0, 100.0, 170.0, 1,    180.0, 150.0, 150.0, 0,     135.0, 180.0, 110.0, 1};
+				//   rot   for    up     grab
 
 	for(;;){
-
-		
-		setCoords(coords,1);
-		hwlib::wait_ms(100);
-		updateRobotServos(pwm);
-		hwlib::wait_ms(1000);
-
-	
+		// cycles through all 4 positions stored in coords[]
+		for (int i = 0; i < 4; i++)
+		{
+			// sets new servo degrees stored in coords[]
+			setCoords(coords,i);
+			// waits 10 ms to make sure all positions have been stored
+			hwlib::wait_ms(10); 
+			// updates all the servo positions 
+			updateRobotServos(pwm);
+			// 4 seconds to get to the positions because of 
+			// the plastic servos and friction on the base plate
+			hwlib::wait_ms(4000); 
+			
+		}
 		
 	}
-
 
 }
 
 
 
 
-// this function doesnt work, pow() and sqrt() cause problems;
-// it does work in the Arduino IDE (the math is right)
+// this function doesnt work, pow() and sqrt() 
+// cause problems; it does work in the Arduino IDE (the math is right)
 void setPositions(float x, float y, float z){
 
 	hwlib::cout << "before ltt\n" << hwlib::flush;
@@ -90,25 +91,24 @@ void setPositions(float x, float y, float z){
 }
 // Sets the global vars of the rotations to 
 // the degrees stored in the coords array[]
-// pos determines the position 
+// pos determines the position in the array (counting from 0)
 void setCoords(float array[], int pos){
 
 	posRot   = array[(pos*4)];
 	posFor   = array[(pos*4)+1];
   	posUp    = array[(pos*4)+2];
-
+	// 4th value stored in coords[] is a boolean used for claw rotation
 	clawAction(array[(pos*4)+3]);  // 0/1
-
 }
 
 
 // Updates the servos rotations
 // Requires a PWMDriver object as argument
 void updateRobotServos( PWMDriver &pwm ){
-	pwm.setPin( 0, pwm.degToPwm(posRot) );
-	pwm.setPin( 1, pwm.degToPwm(posFor) );
-	pwm.setPin( 2, pwm.degToPwm(posUp) );
-	pwm.setPin( 3, pwm.degToPwm(posGrab) );
+	pwm.setPin( 0, pwm.degToPwm( posRot ));
+	pwm.setPin( 1, pwm.degToPwm( posFor ));
+	pwm.setPin( 2, pwm.degToPwm( posUp  ));
+	pwm.setPin( 3, pwm.degToPwm( posGrab));
 }
 
 // sets the rotation of the grab servo
